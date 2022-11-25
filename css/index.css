@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(20, 20, 20, 1));
+    --white: white;
+    --hover: #959708;
+}
+
+/* background */
+
+html{
+   width: 100%;
+   height: 100%; 
+   font-size: 62.5%;
+   color: var(--white);
+   font-family: 'Nunito Sans', sans-serif;
+}
+
+body{
+    background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(20, 20, 20, 1)), url(/imagens/pexels-leon-ardho-1552242.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+/* Header - Menu */
+
+header{
+    width: 100%;
+    height: 7vh;
+    background: rgba(22, 22, 22, 0.2);
+}
+
+.menu-content{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+.logo{
+    font-size: 2.0rem;
+    letter-spacing: 0.5rem;
+    cursor: pointer;
+}
+
+.menu-list{
+    display: flex;
+    list-style: none;
+    gap: 1.25rem
+}
+
+.menu-list a{
+    text-decoration: none;
+    color: var(--white);
+    padding: 1.5rem;
+    transform: 2ms ease-in;
+    position: relative;
+}
+
+.menu-list a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    z-index: -1;
+    background-color: var(--hover);
+    transition: height 0.15s linear;
+}
+
+.menu-list a:hover::before{
+   height: 100%; 
+}
+
+.label-menu, .checkbox{
+    display: none;
+}
+
+/* principal content */
+
+main{
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* texts content */
+
+.title-text{
+    width: 53.563rem;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.second-text{
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    color: #a5a5a5;
+}
+
+/* buttons */
+
+.btns{
+   display: flex;
+   justify-content: center; 
+   gap: 1.25rem;
+}
+
+.btns button{
+    width: 20.625rem;
+    height: 6.313rem;
+    cursor: pointer;
+    border: 1px solid var(--white);
+    color: var(--white);
+    background-color: transparent;
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+    position: relative;
+}
+
+.btns button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    z-index: -1;
+    background-color: var(--hover);
+    transition: height 0.15s linear;
+}
+
+.btns button:hover::before{
+    height: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    /* responsive menu */
+
+    .menu-list{
+        display: block;
+        position: absolute;
+        top: 10rem;
+        left: 0;
+        background: var(--background);
+        text-align: center;
+        width: 100%;
+        height: 0vh;
+        z-index: 1;
+        visibility: hidden;
+        overflow-y: hidden;
+        transition: 0.5s ease-in-out;
+    }
+
+    .menu-list li{
+        margin: 4rem;
+        padding: 1.5rem;
+    }
+
+    .label-menu{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--white);
+        padding: 1rem 0;
+        cursor: pointer;
+    }
+
+    .hamburguer{
+        border-top: 0.125rem solid;
+        width: 2.125rem;
+    }
+
+    .hamburguer::before, .hamburguer::after{
+        content: "";
+        display: block;
+        width: 2.125rem;
+        height: 0.1rem;
+        background: currentColor;
+        margin-top: 0.3125rem;
+        position: relative;
+        transition: 0.3s;
+    }
+
+    .checkbox:checked ~ .menu-list{
+        height: 100vh;
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    .checkbox:checked ~ .label-menu .hamburguer{
+        border-top-color: transparent;
+    }
+
+    .checkbox:checked ~ .label-menu .hamburguer::before{
+        transform: rotate(135deg);
+    }
+
+    .checkbox:checked ~ .label-menu .hamburguer::after{
+        transform: rotate(-135deg);
+        top: -0.4375rem;
+    }
+
+    /* responsive background */
+
+    body{
+        background-position: 40%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    
+    }
+
+    /* responsive text */
+
+   .title-text{
+        width: 50.563rem;
+    }
+
+
+}
+
+@media screen and (max-width: 600px){
+
+    /* responsive menu */
+    .menu-list{
+        display: block;
+        position: absolute;
+        top: 7rem;
+        left: 0;
+        background: var(--background);
+        text-align: center;
+        width: 100%;
+        height: 0vh;
+        z-index: 1;
+        visibility: hidden;
+        overflow-y: hidden;
+        transition: 0.5s ease-in-out;
+    }
+
+
+    /* responsive background */
+
+   body{
+    background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(20, 20, 20, 1)), url(/imagens/pexels-victor-freitas-949132.jpg);
+   }
+
+    /* responsive text */
+
+   .title-text{
+        width: 40.563rem;
+    }
+
+    .second-text{
+        font-size: 2rem;
+        width: 30rem;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    /* responsive text */
+
+    .title-text{
+        width: 30.563rem;
+    }
+
+    .second-text{
+        font-size: 1.5rem;
+        width: 30rem;
+        text-align: center;
+    }
+
+    /* buttons */
+
+    .btns{
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        gap: 1.25rem;
+    } 
+
+    .btns button{
+        width: 20.625rem;
+        height: 6.313rem;
+        cursor: pointer;
+        border: 1px solid var(--white);
+        color: var(--white);
+        background-color: transparent;
+        font-weight: bold;
+        letter-spacing: 0.3rem;
+        position: relative;
+    }
+
+
+}
